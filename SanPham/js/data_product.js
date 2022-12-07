@@ -971,7 +971,7 @@ function renderProduct() {
                 html += '<td>' + item.price.toLocaleString('de-DE') + 'Đ</td>';
                 html += '<td>' + item.category + '</td>';
                 html += '<td>';
-                html += '<button class="btn btn-primary btn-sm trash" type="button" title="Xóa" onclick=""id =' + item.code + '>' + '<i class="fas fa-trash-alt">' + '</i>' + '</button>';
+                html += '<button class="btn btn-primary btn-sm trash" type="button" title="Xóa" onclick="deleteProduct(this);"id =' + item.code + '>' + '<i class="fas fa-trash-alt">' + '</i>' + '</button>';
                 html += '<a href="/SanPham/html/admin/form_edit_product.html" id =' + item.code + '>' + '<button class="btn btn-primary btn-sm edit" onclick="getItemEdit(this);"type="button" title="Sửa" id="show-emp" data-toggle="modal" data-target="#ModalUP">' + '<i class="fas fa-edit">' + '</i>' + '</button>' + '</a>';
                 html += '</td>';
                 html += '</tr>';
@@ -1098,10 +1098,20 @@ function deleteProduct(button) {
                 product.push(newproduct);
             }
         });
-        localStorage.setItem("product", JSON.stringify(product));
-    }
-    location.reload();
 
+    }
+    swal({
+            title: "Cảnh báo",
+            text: "Bạn có chắc chắn là muốn xóa sản phẩm này?",
+            buttons: ["Hủy bỏ", "Đồng ý"],
+        })
+        .then((willDelete) => {
+            if (willDelete) {
+                swal("Đã xóa thành công!", {});
+                localStorage.setItem("product", JSON.stringify(product));
+                location.reload();
+            }
+        });
 }
 
 renderProduct();

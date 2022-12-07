@@ -1,21 +1,19 @@
-jQuery(function() {
-    jQuery(".trash").click(function() {
-        swal({
-                title: "Cảnh báo",
-                text: "Bạn có chắc chắn là muốn xóa sản phẩm này?",
-                buttons: ["Hủy bỏ", "Đồng ý"],
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    deleteProduct(this);
+// jQuery(function() {
+//     jQuery(".trash").click(function() {
+//         swal({
+//                 title: "Cảnh báo",
+//                 text: "Bạn có chắc chắn là muốn xóa sản phẩm này?",
+//                 buttons: ["Hủy bỏ", "Đồng ý"],
+//             })
+//             .then((willDelete) => {
+//                 if (willDelete) {
+//                     swal("Đã xóa thành công!", {
 
-                    swal("Đã xóa thành công!", {
-
-                    });
-                }
-            });
-    });
-});
+//                     });
+//                 }
+//             });
+//     });
+// });
 
 jQuery(function() {
     jQuery(".lock1").click(function() {
