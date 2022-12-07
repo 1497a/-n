@@ -275,7 +275,12 @@ for (let j = 0; j < products.length; j++) {
 
 function checkSignIn1() {
     let checkSignIn = localStorage.getItem('issignin');
-    if (!checkSignIn) alert("Vui Long Đăng Nhập Để Mua Hàng");
+    if (!checkSignIn) {
+        alert("Vui Long Đăng Nhập Để Mua Hàng");
+        document.getElementById("checkout").addEventListener("click", function(event) {
+            event.preventDefault();
+        });
+    }
 }
 
 function onLoadCartNumbers() {
