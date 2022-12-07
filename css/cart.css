@@ -24,12 +24,6 @@ main {
     margin-bottom: 20px;
 }
 
-.card-img-top {
-    width: 200px;
-    height: 200px;
-    align-self: center;
-}
-
 .noi-dung .form h2 {
     color: black;
     font-weight: 500;
@@ -125,21 +119,15 @@ main {
     background: black;
 }
 
-.noi-dung .form .nho-dang-nhap {
-    margin-bottom: 10px;
-    color: black;
-    font-size: 14px;
-}
-
 .noi-dung .form .input-form p {
     color: black;
 }
 
-.noi-dung .form .input-form p a {
+.noi-dung .form .input-form a {
     color: rgb(231, 28, 28);
 }
 
-.noi-dung .form .xac-nhan p a {
+.noi-dung .form .xac-nhan a {
     color: rgb(54, 81, 236);
 }
 
